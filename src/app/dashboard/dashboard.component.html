@@ -1,0 +1,89 @@
+<h1>Dashboard Drag/Drop Example</h1>
+
+<div class="container-fluid p-10" cdkDropList (cdkDropListDropped)="dropBlock($event)">
+    <div class="row" *ngFor="let block of blocks" cdkDrag>
+        <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+        <div class="col-md-12" *ngIf="block=='block1'">
+            <div class="row" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+                <div class="col-md-2 list" *ngFor="let card of cards" cdkDrag>
+                    <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                    <div class="" *ngIf="card=='1'">
+                        <mat-icon class="icon">
+                            account_balance
+                        </mat-icon>
+                        <div class="digit">1123</div>
+                        <div class="subtitle">TERMINALS</div>
+                    </div>
+                    <span class="" *ngIf="card=='2'">
+                        <mat-icon class="icon">
+                            trending_up
+                        </mat-icon>
+                        <div class="digit">13312</div>
+                        <div class="subtitle">TOTAL SALE </div>
+                    </span>
+                    <span class="" *ngIf="card=='3'">
+                        <mat-icon class="icon">
+                            timeline
+                        </mat-icon>
+                        <div class="digit">112</div>
+                        <div class="subtitle">CASH SALE </div>
+                    </span>
+                    <span class="" *ngIf="card=='4'">
+                        <mat-icon class="icon">
+                            speed
+                        </mat-icon>
+                        <div class="digit">11231</div>
+                        <div class="subtitle">CARD SALE </div>
+                    </span>
+                    <span class="" *ngIf="card=='5'">
+                        <mat-icon class="icon">
+                            equalizer
+                        </mat-icon>
+                        <div class="digit">112</div>
+                        <div class="subtitle">TOTAL SALE </div>
+                    </span>
+                    <span class="" *ngIf="card=='6'">
+                        <mat-icon class="icon">
+                            supervisor_account
+                        </mat-icon>
+                        <div class="digit">112</div>
+                        <div class="subtitle">LOW TRANSATION </div>
+                    </span>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-12" *ngIf="block=='block2'">
+            <div class="row" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="dropCharts($event)">
+                <div [class.col-md-3]="card=='1'" [class.col-md-9]="card=='2'" *ngFor="let card of charts" cdkDrag>
+                    <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                    <span class="blue" *ngIf="card=='1'">
+                        <ul class="list-group">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                        </ul>
+
+
+                    </span>
+                    <span class="green" *ngIf="card=='2'">
+
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary">This is a primary list group item</li>
+                            <li class="list-group-item list-group-item-secondary">This is a secondary list group item
+                            </li>
+                            <li class="list-group-item list-group-item-success">This is a success list group item</li>
+                            <li class="list-group-item list-group-item-danger">This is a danger list group item</li>
+
+                        </ul>
+
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
